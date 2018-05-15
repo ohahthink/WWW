@@ -36,14 +36,14 @@ h2{
   content: "첫번째 자식 요소";
   background-color: gray;
   color: #FFF;
-}
+}*/
 .clearfix::after{
   content: "";
   background-color: #000;
   color: #FFF;
   clear: both;
   display: block;
-}*/
+}
 
 /* .clearfix{ 
   clear: both;
