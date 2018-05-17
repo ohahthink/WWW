@@ -1,4 +1,6 @@
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 @import url("normalize.css");
+@import url("fontello.css");
 *, *::before, *::after{
   box-sizing: border-box;
 }
@@ -15,25 +17,36 @@ a{
   color: inherit;
   text-decoration: none;
 }
-/* 숨김콘텐츠 */
+/* 숨김 콘텐츠 */
 .readable-hidden{
-  background-color: yellow;
   position: absolute;
-  left: -9999em;
+  width: 1px;
+  height: 1px;
+  clip: rect(0,0,0,0);
+  margin: -1px;
+  overflow: hidden;
+}
+html{
+  font-size: 10px;
 }
 body {
   background-color: #fff;
-  font-size: 16px;
+  font-size: 1.4rem;
   color: #181818;
+  font-family: 'Spoqa Han Sans';
 }
 h2{
   margin: 0;
   font-size: 1em;
-  font-weight: normal;
+  font-weight: normal
 }
 /* 레이아웃 */
 .wrapper{
   background-color: silver;
+  background-image: url("images/bg_flower.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  /* background-attachment: fixed; 패럴렉스 스크롤 */
 }
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
@@ -41,8 +54,9 @@ h2{
 }
 .header{
   background-color: #fff;
-  padding: 0 30px;
+  padding: 0 30px 40px;
   position: relative;
+  border-radius: 0 0 15px 15px;
 }
 /* 로고 */
 .logo{
@@ -50,7 +64,7 @@ h2{
   top: 45px;
   left: 65px;
 }
-/* 멤버링크 */
+/* 멤버 링크 */
 .member{
   text-align: right;
   font-size: 0;
@@ -60,7 +74,7 @@ h2{
 }
 .member li{
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.4rem;
   text-transform: uppercase;
 }
 .member li:nth-child(n+2)::before{
@@ -69,13 +83,105 @@ h2{
 .member a{
   padding: 5px 10px;
 }
+/* 메인 메뉴 */
+.menu{
+  background: linear-gradient(to bottom, #fcb900 0%,#ff911c 35%,#ff911c 65%,#fcb900 100%,#feffff 100%);
+  background-color: #ce5327;
+  /* background-image: linear-gradient(-45deg, red 0%, green 30%,blue 100%); 그라디언트*/
+  /* background-image: repeating-linear-gradient(-45deg, red 0, red 50px, green 50px, green 100px); 패턴 */
+  /* background: yellow url(images/ani_flower_03.png) no-repeat 50% 30% /200px 200px; */
+  /* 위 단축표기법 풀어놓은 것 
+  background-color: yellow;
+  background-image: url("images/ani_flower_03.png");
+  background-repeat: no-repeat;
+  background-position: 50% 30%;
+  background-size: 200px 200px;*/
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+  /* outline: 10px dashed blue; */
+  /* box-shadow: 0 -5px 0 0 green; 그림자넣는 법 */
+  padding-left: 225px;
+  height: 47px;
+}
+.menu-item{
+  float: left;
+  position: relative;
+}
+.menu-item-text{
+  line-height: 45px;
+  border-left: 2px solid rgba(255, 255, 255, .5);
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;/* padding-top: 10px; */
+}
+.menu-item-text:hover::after{
+  content: "";
+  background-color: #000;
+  /* background-image: linear-gradient(to right, red, blue); 으로도 가능*/
+  display: block;
+  height: 2px;
+}
+.menu-item-text:hover{
+  color: yellow;
+  cursor: pointer;
+}
+.sub-menu{
+  position: absolute;
+  top: 50px;
+  white-space: nowrap;
+}
+.sub-menu li{
+  display: inline-block;
+}
+.sub-menu a{
+  display: inline-block;
+  padding: 8px 5px 10px 0;
+  margin-right: 10px;
+}
+.sub-menu a::before{
+  font-family: "fontello";
+  content: "\f192";
+}
+.sub-menu a:hover:before{
+  content: "\e800";
+}
+.menu-item:nth-child(1) .sub-menu{
+  display: none;
+  left: 0;  
+}
+.menu-item:nth-child(2) .sub-menu{
+  display: none;
+  left: 0;  
+}
+.menu-item:nth-child(3) .sub-menu{
+  display: none;
+  left: 0;  
+}
+.menu-item:nth-child(4) .sub-menu{
+  display: none;
+  right: 0;
+}
+.menu-item:nth-child(5) .sub-menu{
+  display: none;
+  right: 0;
+}
+.menu-item:nth-child(6) .sub-menu{
+  display: none;
+  right: 0;
+}
+/* 비주얼 */
 .visual{
   background-color: lime;
   height: 10vh;
 }
+/* 메인 콘텐츠 */
 .main{
   background-color: skyblue;
   padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
 }
 .clearfix::after{
   content: "";
