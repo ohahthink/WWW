@@ -1,4 +1,6 @@
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 @import url("normalize.css");
+@import url("fontello.css");
 *, *::before, *::after{
   box-sizing: border-box;
 }
@@ -15,25 +17,32 @@ a{
   color: inherit;
   text-decoration: none;
 }
-/* 숨김콘텐츠 */
+/* 숨김 콘텐츠 */
 .readable-hidden{
-  background-color: yellow;
   position: absolute;
-  left: -9999em;
+  width: 1px;
+  height: 1px;
+  clip: rect(0,0,0,0);
+  margin: -1px;
+  overflow: hidden;
+}
+html{
+  font-size: 10px;
 }
 body {
   background-color: #fff;
-  font-size: 16px;
+  font-size: 1.4rem;
   color: #181818;
+  font-family: 'Spoqa Han Sans';
 }
-h2{
-  margin: 0;
-  font-size: 1em;
-  font-weight: normal;
-}
+
 /* 레이아웃 */
 .wrapper{
-  background-color: yellow;
+  background-color: silver;
+  background-image: url("images/bg_flower.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  /* background-attachment: fixed; 패럴렉스 스크롤 */
 }
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
@@ -41,27 +50,79 @@ h2{
 }
 .header{
   background-color: #fff;
-  padding: 0 30px;
+  padding: 0 30px 40px;
   position: relative;
 }
 /* 로고 */
 .logo{
-  position: absolute;
-  top: 45px;
-  left: 65px;
+  padding: 45px 0 0 35px;
 }
+/* 멤버링크 */
 .member{
   display: flex;
   justify-content: flex-end;
-  padding: 10px 0;
-  position: relative;
-  right: -10px;
+  margin-top: -70px;
+  margin-right: -10px;
+}
+
+.member li{
+  text-transform: uppercase;
 }
 .member li:nth-child(n+2)::before{
-  content: ":"
+  content: ":";
 }
 .member a{
   padding: 5px 10px;
+}
+/* 메인메뉴 */
+.menu{
+  background: linear-gradient(to bottom, #fcb900 0%,#ff911c 35%,#ff911c 65%,#fcb900 100%,#feffff 100%);
+  background-color: #ce5327;
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+  margin-top: 10px;
+  padding-left: 225px;
+  display: flex;
+  align-items: center;
+  height: 47px;
+  /* 가로정렬을 위해 첫번째로 디스플레이 속성 바꿈 */
+  /* justify-content: space-evenly; */
+}
+.menu-item{
+  border-left: 2px solid rgba(225, 225, 225, .5);
+  flex-basis: 200px;
+  /* flex-grow: 0; 
+  flex-shrink: 1;*/
+  flex: 1 1 auto;
+  text-align: center;
+  /* width를 줘도됨 */
+  position: relative;
+}
+.menu-item-text{
+  /* border-left: 2px solid rgba(255, 255, 255, .5); */
+  /* padding: 0 20px; */
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;/* padding-top: 10px; */
+}
+.sub-menu{
+  position: absolute;
+  top: 35px;
+  white-space: nowrap;
+  display: none;
+}
+.sub-menu a{
+  display: inline-block;
+  padding: 8px 5px 10px 0;
+  margin-right: 10px;
+}
+.sub-menu a::before{
+  font-family: "fontello";
+  content: "\f192";
+}
+.sub-menu a:hover:before{
+  content: "\e800";
 }
 .visual{
   background-color: lime;
